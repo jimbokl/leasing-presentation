@@ -1628,6 +1628,11 @@
         const leaseRate = parseFloat(document.getElementById('lease-rate').value) / 100;
         const loanRate = parseFloat(document.getElementById('loan-rate').value) / 100;
         
+        // Tax rates
+        const vatRate = 0.20; // 20% НДС
+        const profitTaxRate = 0.20; // 20% налог на прибыль
+        const acceleratedDepreciationFactor = 3; // Коэффициент ускоренной амортизации
+        
         // Calculate lease payment
         const advanceAmount = vehicleCost * advancePayment;
         const financedAmount = vehicleCost - advanceAmount;
@@ -1640,12 +1645,30 @@
         const loanPayment = vehicleCost * (monthlyLoanRate * Math.pow(1 + monthlyLoanRate, leaseTerm)) / 
                             (Math.pow(1 + monthlyLoanRate, leaseTerm) - 1);
         
-        // Calculate TCO for lease (with tax benefits: VAT refund + accelerated depreciation)
-        const vatRefund = vehicleCost * 0.20; // 20% VAT refund
-        const acceleratedDepreciation = vehicleCost * 0.10; // Estimate 10% benefit from accelerated depreciation
-        const leaseTCO = advanceAmount + (leasePayment * leaseTerm) - vatRefund - acceleratedDepreciation;
+        // Calculate TCO for lease with proper tax benefits
         
-        // Calculate TCO for loan (no tax benefits)
+        // 1. VAT refund benefit
+        const vatRefund = vehicleCost * vatRate;
+        
+        // 2. Accelerated depreciation benefit (compared to regular depreciation)
+        // Regular depreciation period for vehicles is ~7 years (84 months)
+        const regularMonthlyDepreciation = vehicleCost / 84;
+        const acceleratedMonthlyDepreciation = (vehicleCost / 84) * acceleratedDepreciationFactor;
+        
+        // Calculate the additional tax shield from accelerated depreciation over the lease term
+        let acceleratedDepreciationBenefit = 0;
+        for (let i = 0; i < leaseTerm; i++) {
+          const additionalExpense = acceleratedMonthlyDepreciation - regularMonthlyDepreciation;
+          acceleratedDepreciationBenefit += additionalExpense * profitTaxRate;
+        }
+        
+        // 3. Calculate the total lease payments including advance
+        const totalLeasePayments = advanceAmount + (leasePayment * leaseTerm);
+        
+        // 4. Calculate the real vehicle TCO with tax benefits
+        const leaseTCO = totalLeasePayments - vatRefund - acceleratedDepreciationBenefit;
+        
+        // Calculate TCO for loan (no special tax benefits)
         const loanTCO = loanPayment * leaseTerm;
         
         // Calculate savings
