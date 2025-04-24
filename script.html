@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Памятка менеджера «Европлан»</title>
+  <style>
+    :root {
+      --blue: #0050A0;
+      --orange: #FF9600;
+      --bg: #F7F9FC;
+      --gray: #6C7A89;
+      --light: #E6E9EF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--bg);
+      color: #333;
+      line-height: 1.6;
+      padding: 0 0 30px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 150px;
+      height: 40px;
+      margin-right: 20px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      color: var(--blue);
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: var(--blue);
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--light);
+    }
+
+    .datetime {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    section {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    /* Product Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      padding: 15px;
+      border-radius: 8px;
+      background-color: white;
+      border: 1px solid var(--light);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-title {
+      font-weight: bold;
+      color: var(--blue);
+      margin-bottom: 5px;
+    }
+
+    .feature-desc {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* KPI Cards */
+    .kpi-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .kpi-card {
+      padding: 15px;
+      border-radius: 8px;
+      background-color: white;
+      border: 1px solid var(--light);
+    }
+
+    .kpi-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: var(--blue);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .kpi-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--blue);
+      margin: 10px 0;
+    }
+
+    .kpi-baseline {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .progress-container {
+      height: 8px;
+      background-color: var(--light);
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+
+    .progress-bar {
+      height: 8px;
+      border-radius: 4px;
+      transition: width 1s ease-out;
+    }
+
+    .progress-red { background-color: #E74C3C; }
+    .progress-yellow { background-color: #F1C40F; }
+    .progress-green { background-color: #2ECC71; }
+
+    /* Daily Checklist */
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .checklist-item:last-child {
+      border-bottom: none;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-right: 15px;
+      width: 18px;
+      height: 18px;
+    }
+
+    .checklist-item label {
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--gray);
+    }
+
+    /* CORE-7 Accordion */
+    .accordion-item {
+      border: 1px solid var(--light);
+      border-radius: 4px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      padding: 15px;
+      background-color: white;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accordion-header:hover {
+      background-color: var(--light);
+    }
+
+    .accordion-content {
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background-color: white;
+    }
+
+    .accordion-content-inner {
+      padding: 15px;
+    }
+
+    .accordion-active .accordion-content {
+      max-height: 1000px;
+    }
+
+    .accordion-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-active .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Objections Tabs */
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--light);
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--gray);
+    }
+
+    .tab-button:hover {
+      color: var(--blue);
+    }
+
+    .tab-button.active {
+      color: var(--blue);
+      border-bottom: 3px solid var(--orange);
+    }
+
+    .tab-content {
+      display: none;
+      padding: 15px 0;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Quick Links */
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .quick-link {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      background-color: white;
+      border: 1px solid var(--light);
+      border-radius: 4px;
+      color: var(--blue);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .quick-link:hover {
+      background-color: var(--blue);
+      color: white;
+    }
+
+    .link-icon {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      margin-top: 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-icon {
+      margin-right: 5px;
+      color: var(--blue);
+    }
+
+    .generation-info {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .datetime {
+        margin-top: 10px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .kpi-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .tabs {
+        flex-direction: column;
+        border-bottom: none;
+      }
+
+      .tab-button {
+        border-bottom: 1px solid var(--light);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-title">
+          <svg class="logo" viewBox="0 0 236 60" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#0050A0" d="M46.2,10.4c-11.4,0-20.6,9.2-20.6,20.6c0,11.4,9.2,20.6,20.6,20.6c11.4,0,20.6-9.2,20.6-20.6 C66.8,19.6,57.6,10.4,46.2,10.4z M22.9,47.7h-6.4v-6.4h6.4V47.7z M14.1,38.9H7.7v-6.4h6.4V38.9z M41.5,29.3c0-2.6,2.1-4.7,4.7-4.7 c2.6,0,4.7,2.1,4.7,4.7c0,2.6-2.1,4.7-4.7,4.7C43.6,34,41.5,31.9,41.5,29.3z M22.9,21.7h-6.4v-6.4h6.4V21.7z"/>
+            <path fill="#0050A0" d="M78.7,31.3h6.5c0.1,1.9,1.6,3.1,3.8,3.1c2,0,3.3-0.8,3.3-2c0-3.8-12.7-1.2-12.7-9.5c0-3.7,3.2-6.3,8.6-6.3 c5.4,0,8.9,2.6,9,7.3h-6.4c-0.1-1.6-1.2-2.5-2.9-2.5c-1.6,0-2.7,0.7-2.7,1.8c0,3.7,12.7,1.2,12.7,9.6c0,3.8-3.5,6.4-9.2,6.4 C82.5,39.1,78.8,36.2,78.7,31.3z"/>
+            <path fill="#0050A0" d="M104.7,38.8h-6.5V17h6.5v10.9l5.5-5.3h8l-7.6,7l7.8,9.2h-8l-5.7-6.9V38.8z"/>
+            <path fill="#0050A0" d="M123.7,27.9c0-6.5,4.9-11.2,11.8-11.2c6.9,0,11.8,4.8,11.8,11.2c0,6.5-4.9,11.2-11.8,11.2 C128.5,39.1,123.7,34.3,123.7,27.9z M140.6,27.9c0-3.1-2.2-5.3-5.2-5.3c-3,0-5.2,2.2-5.2,5.3c0,3.1,2.2,5.3,5.2,5.3 C138.4,33.1,140.6,30.9,140.6,27.9z"/>
+            <path fill="#0050A0" d="M151.3,38.8V17h6.5v3.4c1.1-2.4,3.3-3.6,6.3-3.6c4.8,0,7.5,2.9,7.5,8.3v13.8h-6.5V26.4c0-2.4-1.1-3.8-3.3-3.8 c-2.3,0-4,1.7-4,4.9v11.4H151.3z"/>
+            <path fill="#FF9600" d="M193.5,28.3c0,7.5-5,10.8-10.8,10.8c-6.7,0-11.2-4.5-11.2-11.1c0-6.7,4.5-11.3,11.2-11.3c5.4,0,9.6,2.9,10.5,7.7 h-6.5c-0.6-1.5-2-2.2-3.9-2.2c-2.8,0-4.8,2-4.8,5.8c0,3.7,2,5.5,4.8,5.5c1.7,0,3.1-0.7,3.8-2.1h-4.8v-4.2h11.6V28.3z"/>
+            <path fill="#FF9600" d="M204.1,16.7c6.5,0,10.6,3,11.5,8.1h-6.6c-0.4-1.7-2.1-2.8-4.8-2.8c-2.7,0-4.6,1.2-4.6,2.8c0,1.9,2.3,2.3,4.8,2.4 c6.8,0.5,11.6,1.9,11.6,7.3c0,4.6-4.4,7.6-11.3,7.6c-7,0-11.3-2.8-12.3-8.1h6.8c0.4,1.8,2.3,2.8,5.3,2.8c2.9,0,5-0.9,5-2.5 c0-1.8-2.4-2.3-5.3-2.5c-6.5-0.4-11.1-2.1-11.1-7.3C193.1,19.5,197.8,16.7,204.1,16.7z"/>
+          </svg>
+          <h1>Памятка менеджера — v1.0</h1>
+        </div>
+        <div class="datetime" id="current-datetime">—</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Product Description -->
+    <section id="product">
+      <h2>Европлан — решение для роста бизнеса</h2>
+      <div class="features">
+        <div class="feature-card" data-feature="leasing">
+          <div class="feature-icon">🚗</div>
+          <div class="feature-title">Операционный лизинг</div>
+          <div class="feature-desc">До 100 % финансирования без залога ТС.</div>
+        </div>
+        <div class="feature-card" data-feature="rate">
+          <div class="feature-icon">💰</div>
+          <div class="feature-title">Ставка ниже кредита</div>
+          <div class="feature-desc">Экономия за счёт НДС-вычета и амортизации.</div>
+        </div>
+        <div class="feature-card" data-feature="schedule">
+          <div class="feature-icon">📊</div>
+          <div class="feature-title">Гибкий график</div>
+          <div class="feature-desc">Balloon, сезонные платежи, плавающая ставка.</div>
+        </div>
+        <div class="feature-card" data-feature="portal">
+          <div class="feature-icon">🌐</div>
+          <div class="feature-title">Онлайн-кабинет</div>
+          <div class="feature-desc">Договор, счета и ТС-отчёты 24/7 в браузере.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KPI Dashboard -->
+    <section id="kpi">
+      <h2>Ключевые показатели (KPI)</h2>
+      <div class="kpi-cards">
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>NVB</span>
+            <span>млн ₽</span>
+          </div>
+          <div class="kpi-value" data-target="14" data-current="0">0</div>
+          <div class="kpi-baseline">База: 14 млн ₽</div>
+          <div class="progress-container">
+            <div class="progress-bar" data-base="14" data-min="11" data-max="17"></div>
+          </div>
+        </div>
+        
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Конверсия</span>
+            <span>%</span>
+          </div>
+          <div class="kpi-value" data-target="42" data-current="0">0</div>
+          <div class="kpi-baseline">База: 42 %</div>
+          <div class="progress-container">
+            <div class="progress-bar" data-base="42" data-min="34" data-max="50"></div>
+          </div>
+        </div>
+        
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Lead→Sign</span>
+            <span>дни</span>
+          </div>
+          <div class="kpi-value" data-target="12" data-current="0" data-lower="true">0</div>
+          <div class="kpi-baseline">Цель: ≤12 дней</div>
+          <div class="progress-container">
+            <div class="progress-bar" data-base="12" data-min="14" data-max="10" data-lower="true"></div>
+          </div>
+        </div>
+        
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>«Флит+»</span>
+            <span>%</span>
+          </div>
+          <div class="kpi-value" data-target="35" data-current="0">0</div>
+          <div class="kpi-baseline">База: 35 %</div>
+          <div class="progress-container">
+            <div class="progress-bar" data-base="35" data-min="28" data-max="40"></div>
+          </div>
+        </div>
+        
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>NPS</span>
+            <span></span>
+          </div>
+          <div class="kpi-value" data-target="70" data-current="0">0</div>
+          <div class="kpi-baseline">База: 70</div>
+          <div class="progress-container">
+            <div class="progress-bar" data-base="70" data-min="56" data-max="75"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily Checklist -->
+    <section id="daily">
+      <h2>Ежедневный чек-лист</h2>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <input type="checkbox" id="task1">
+          <label for="task1">Self-check целей дня</label>
+        </li>
+        <li class="checklist-item">
+          <input type="checkbox" id="task2">
+          <label for="task2">Стендап-15</label>
+        </li>
+        <li class="checklist-item">
+          <input type="checkbox" id="task3">
+          <label for="task3">Квалификация лидов</label>
+        </li>
+        <li class="checklist-item">
+          <input type="checkbox" id="task4">
+          <label for="task4">Follow-up горячих</label>
+        </li>
+        <li class="checklist-item">
+          <input type="checkbox" id="task5">
+          <label for="task5">Обзвон «спящих»</label>
+        </li>
+        <li class="checklist-item">
+          <input type="checkbox" id="task6">
+          <label for="task6">Заполнение CRM</label>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CORE-7 Accordion -->
+    <section id="core">
+      <h2>CORE-7 Скрипт</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>1. Context</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Задайте 2 вопроса о бизнесе клиента и 1 вопрос о текущем парке транспортных средств.</p>
+              <p>Например:</p>
+              <ul>
+                <li>Как давно работаете в этой отрасли?</li>
+                <li>Какие ключевые проекты сейчас в работе?</li>
+                <li>Сколько транспортных средств в вашем автопарке и какой средний возраст?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>2. Objective</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Выясните цели клиента, ожидаемый ROI и сроки.</p>
+              <p>Ключевые вопросы:</p>
+              <ul>
+                <li>Зачем вашему бизнесу нужна эта техника именно сейчас?</li>
+                <li>Какую отдачу на инвестиции вы ожидаете?</li>
+                <li>В какие сроки нужно ввести технику в эксплуатацию?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>3. Risk</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Обсудите риски откладывания решения:</p>
+              <ul>
+                <li>"Что произойдет, если отложить покупку техники на полгода?"</li>
+                <li>"Какие возможности могут быть упущены?"</li>
+                <li>"Как это повлияет на операционные расходы и конкурентоспособность?"</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>4. Economy</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Продемонстрируйте TCO-экономию по сравнению с кредитом:</p>
+              <ul>
+                <li>Продемонстрируйте выгоды НДС-вычета (20%)</li>
+                <li>Покажите эффект ускоренной амортизации</li>
+                <li>Суммарная экономия составляет обычно 7-12% от стоимости ТС</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>5. Решение графика</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Подберите оптимальный график платежей:</p>
+              <ul>
+                <li><strong>Фиксированная ставка:</strong> надежность и предсказуемость</li>
+                <li><strong>Плавающая ставка:</strong> потенциальная экономия при снижении ключевой</li>
+                <li><strong>Balloon:</strong> сниженные платежи с остаточным платежом</li>
+                <li><strong>Сезонность:</strong> платите меньше в низкий сезон, больше в высокий</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>6. Extra value</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Предложите дополнительные услуги для создания комплексного решения:</p>
+              <ul>
+                <li><strong>«Флит+»:</strong> комплексный сервис для автопарка</li>
+                <li><strong>Телематика:</strong> мониторинг и оптимизация использования ТС</li>
+                <li><strong>Топливные карты:</strong> экономия до 12% на топливе</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <span>7. Next step & Timing</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Зафиксируйте следующие шаги и сроки:</p>
+              <ul>
+                <li>Четко обозначьте, кто что делает до определенной даты</li>
+                <li>Зафиксируйте дату следующей встречи/звонка</li>
+                <li>Подготовьте документы для подписания</li>
+              </ul>
+              <p>Пример: "К пятнице я пришлю вам два расчета графика, а от вас нужны документы по компании"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objections Tabs -->
+    <section id="objections">
+      <h2>Работа с возражениями</h2>
+      <div class="tabs">
+        <button class="tab-button active" data-tab="tab1">Ставка</button>
+        <button class="tab-button" data-tab="tab2">Платёж</button>
+        <button class="tab-button" data-tab="tab3">Гибкость</button>
+      </div>
+      
+      <div class="tab-content active" id="tab1">
+        <h3>«Ставка космическая, подождём падения»</h3>
+        <p>При лизинге ставка — лишь верхушка айсберга. С учетом НДС-вычета и ускоренной амортизации фактическая стоимость владения на 7-12% ниже кредита.</p>
+        <p>Также доступна опция Re-pricing через 18 месяцев бесплатно — если ставка снизится, мы пересчитаем график.</p>
+      </div>
+      
+      <div class="tab-content" id="tab2">
+        <h3>«Большой ежемесячный платёж»</h3>
+        <p>Предложите увеличить аванс до 25% или структуру с Balloon 30% в конце срока — нагрузка на cash-flow снижается на 18%.</p>
+        <p>Также доступен сезонный график оплаты: летом платежи меньше, когда выручка традиционно ниже.</p>
+      </div>
+      
+      <div class="tab-content" id="tab3">
+        <h3>«Нужна гибкость владения»</h3>
+        <p>С помощью механизма buy-back через 36 месяцев вы можете обновить парк без необходимости самостоятельной перепродажи и связанных с этим потерь.</p>
+        <p>Также портал "Флит+" предоставляет полную информацию о пробеге, сервисе, напоминает о необходимом ТО — экономия времени и снижение риска штрафов.</p>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section id="links">
+      <h2>Быстрые ссылки</h2>
+      <div class="quick-links">
+        <a href="#" target="_blank" class="quick-link">
+          <span class="link-icon">📊</span>
+          TCO-калькулятор
+        </a>
+        <a href="#" target="_blank" class="quick-link">
+          <span class="link-icon">📄</span>
+          Каталог субсидий
+        </a>
+        <a href="#" target="_blank" class="quick-link">
+          <span class="link-icon">❓</span>
+          FAQ по ставкам
+        </a>
+        <a href="#" target="_blank" class="quick-link">
+          <span class="link-icon">💼</span>
+          CRM-панель
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <span>8 (800) 250-80-80</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <span>info@europlan.ru</span>
+        </div>
+      </div>
+      <div class="generation-info">
+        Сгенерировано: 24 апреля 2025 г.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Update Date and Time
+    function updateDateTime() {
+      const now = new Date();
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+      document.getElementById('current-datetime').textContent = now.toLocaleString('ru-RU', options);
+    }
+    
+    updateDateTime();
+    setInterval(updateDateTime, 60000); // Update every minute
+
+    // KPI Animation
+    function animateKPI() {
+      const kpiValues = document.querySelectorAll('.kpi-value');
+      const progressBars = document.querySelectorAll('.progress-bar');
+      
+      kpiValues.forEach(value => {
+        const target = parseInt(value.dataset.target);
+        const current = parseInt(value.dataset.current);
+        const isLower = value.dataset.lower === 'true';
+        const duration = 1000; // Animation duration in ms
+        const step = target / (duration / 16); // 60 FPS
+        
+        let count = current;
+        const timer = setInterval(() => {
+          count += step;
+          if ((!isLower && count >= target) || (isLower && count >= target)) {
+            clearInterval(timer);
+            count = target;
+          }
+          value.textContent = Math.round(count);
+          value.dataset.current = count;
+        }, 16);
+      });
+      
+      progressBars.forEach(bar => {
+        const baseValue = parseFloat(bar.dataset.base);
+        const minValue = parseFloat(bar.dataset.min);
+        const maxValue = parseFloat(bar.dataset.max);
+        const isLower = bar.dataset.lower === 'true';
+        
+        const actual = baseValue;
+        let percentage;
+        
+        if (!isLower) {
+          // Normal metrics (higher is better)
+          if (actual < minValue) {
+            percentage = (actual / minValue) * 80;
+            bar.classList.add('progress-red');
+          } else if (actual >= minValue && actual < baseValue) {
+            percentage = 80 + (actual - minValue) / (baseValue - minValue) * 20;
+            bar.classList.add('progress-yellow');
+          } else {
+            percentage = 100 + (actual - baseValue) / (maxValue - baseValue) * 20;
+            percentage = Math.min(percentage, 120);
+            bar.classList.add('progress-green');
+          }
+        } else {
+          // Lower is better (like Lead→Sign days)
+          if (actual > minValue) {
+            percentage = (minValue / actual) * 80;
+            bar.classList.add('progress-red');
+          } else if (actual <= minValue && actual > baseValue) {
+            percentage = 80 + (minValue - actual) / (minValue - baseValue) * 20;
+            bar.classList.add('progress-yellow');
+          } else {
+            percentage = 100 + (baseValue - actual) / (baseValue - maxValue) * 20;
+            percentage = Math.min(percentage, 120);
+            bar.classList.add('progress-green');
+          }
+        }
+        
+        setTimeout(() => {
+          bar.style.width = percentage + '%';
+        }, 200);
+      });
+    }
+    
+    // Initialize Checklist from localStorage
+    function initChecklist() {
+      const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+      const savedTasks = JSON.parse(localStorage.getItem('todos-v1')) || [];
+      
+      checkboxes.forEach((checkbox, index) => {
+        checkbox.checked = savedTasks[index] || false;
+        
+        checkbox.addEventListener('change', () => {
+          const updatedTasks = [];
+          document.querySelectorAll('.checklist input[type="checkbox"]').forEach(cb => {
+            updatedTasks.push(cb.checked);
+          });
+          localStorage.setItem('todos-v1', JSON.stringify(updatedTasks));
+        });
+      });
+    }
+    
+    // Accordion functionality
+    function initAccordion() {
+      const accordionHeaders = document.querySelectorAll('.accordion-header');
+      
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const accordionItem = header.parentElement;
+          accordionItem.classList.toggle('accordion-active');
+        });
+      });
+    }
+    
+    // Tabs functionality
+    function initTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+      const savedTab = localStorage.getItem('tab-active') || 'tab1';
+      
+      // Initialize with saved tab
+      activateTab(savedTab);
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const tabId = button.dataset.tab;
+          activateTab(tabId);
+          localStorage.setItem('tab-active', tabId);
+        });
+      });
+      
+      function activateTab(tabId) {
+        tabButtons.forEach(btn => {
+          btn.classList.remove('active');
+          if (btn.dataset.tab === tabId) {
+            btn.classList.add('active');
+          }
+        });
+        
+        tabContents.forEach(content => {
+          content.classList.remove('active');
+          if (content.id === tabId) {
+            content.classList.add('active');
+          }
+        });
+      }
+    }
+    
+    // Feature cards click events
+    function initFeatureCards() {
+      const featureCards = document.querySelectorAll('.feature-card');
+      
+      featureCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const featureId = card.dataset.feature;
+          console.log(featureId);
+        });
+      });
+    }
+    
+    // Initialize everything when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      animateKPI();
+      initChecklist();
+      initAccordion();
+      initTabs();
+      initFeatureCards();
+    });
+  </script>
+</body>
+</html>
