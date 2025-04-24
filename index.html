@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Лизинг как инструмент финансирования бизнеса в 2025 году</title>
+
+  <!-- Reveal.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css">
+
+  <!-- External Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .custom-slide {
+      width: 100%;
+      color: white;
+      position: relative;
+    }
+
+    /* Общие стили для слайдов */
+    .custom-slide::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(200px, -200px);
+      z-index: 0;
+    }
+
+    .custom-slide::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(-150px, 150px);
+      z-index: 0;
+    }
+
+    /* Заголовки и текст */
+    .reveal h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      z-index: 1;
+      position: relative;
+    }
+
+    .reveal h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    .reveal section {
+      background: linear-gradient(135deg, #304352 0%, #0F2027 100%);
+      padding: 20px;
+    }
+    
+    /* Специальные классы из слайдов */
+    .leasing-icon {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      z-index: 1;
+      position: relative;
+    }
+    
+    .date {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Grid layouts */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .grid-container.grid-cols-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 15px;
+      backdrop-filter: blur(10px);
+      font-size: 0.9rem;
+    }
+
+    .chart-container {
+      height: 280px;
+      margin-top: 15px;
+    }
+    
+    .key-point {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: start;
+      gap: 10px;
+    }
+    
+    .icon {
+      color: #64B5F6;
+      margin-top: 4px;
+    }
+
+    /* Другие общие стили */
+    section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Стили для сравнительных таблиц */
+    .comparison-table th {
+      background-color: rgba(100, 181, 246, 0.2);
+      font-weight: bold;
+    }
+
+    .comparison-table td, .comparison-table th {
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .comparison-table tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .comparison-table .highlight {
+      color: #64B5F6;
+      font-weight: bold;
+    }
+
+    /* Анимации */
+    .reveal .fade-in {
+      animation: fadeIn ease 1s;
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Слайд 1: Титульный слайд -->
+      <section data-background="linear-gradient(135deg, #304352 0%, #0F2027 100%)">
+        <div class="custom-slide">
+          <i class="fas fa-handshake leasing-icon"></i>
+          <h1>Лизинг как инструмент финансирования бизнеса в 2025 году</h1>
+          <h2>Преимущества, особенности и сравнение с альтернативами</h2>
+          <div class="date">Апрель 2025</div>
+        </div>
+      </section>
+
+      <!-- Слайд 2: Что такое лизинг -->
+      <section data-background="linear-gradient(135deg, #304352 0%, #0F2027 100%)">
+        <div class="custom-slide">
+          <h1>Что такое лизинг и как он работает</h1>
+          
+          <div class="grid-container">
+            <div class="info-card">
+              <h3 class="text-xl font-bold mb-3">Определение и ключевые характеристики</h3>
+              <div class="key-point">
+                <i class="fas fa-file-contract icon"></i>
+                <div>
+                  <strong>Лизинг</strong> — долгосрочная аренда имущества с последующим правом выкупа, форма инвестиционной деятельности по приобретению имущества и передаче его на основании договора лизинга
+                </div>
+              </div>
+              <div class="key-point">
+                <i class="fas fa-users icon"></i>
+                <div>
+                  <strong>Участники:</strong> лизингодатель, лизингополучатель, поставщик
+                </div>
+              </div>
+              <div class="key-point">
+                <i class="fas fa-book icon"></i>
+                <div>
+                  <strong>Правовая основа:</strong> ФЗ №164 "О финансовой аренде (лизинге)" (с обновлениями 2024 года)
+                </div>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <h3 class="text-xl font-bold mb-3">Схема работы лизинга</h3>
+              <img src="images/leasing_scheme.svg" alt="Схема работы лизинга" class="w-full object-contain h-48">
+              <ol class="list-decimal pl-5 mt-3">
+                <li>Выбор оборудования/имущества лизингополучателем</li>
+                <li>Покупка имущества лизинговой компанией</li>
+                <li>Передача имущества в пользование</li>
+                <li>Внесение регулярных платежей</li>
+                <li>Переход права собственности (опционально)</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Слайд 3: Виды лизинга -->
+      <section data-background="linear-gradient(135deg, #304352 0%, #0F2027 100%)">
+        <div class="custom-slide">
+          <h1>Основные виды лизинга в 2025 году</h1>
+          
+          <div class="grid-container grid-cols-3">
+            <div class="info-card">
+              <div class="flex items-center mb-3">
+                <i class="fas fa-building text-blue-400 mr-2"></i>
+                <h3 class="text-xl font-bold">Финансовый лизинг</h3>
+              </div>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Долгосрочный (3-7 лет)</li>
+                <li>Полная амортизация имущества</li>
+                <li>Переход права собственности</li>
+                <li>Имущество на балансе лизингополучателя</li>
+                <li>Ответственность за обслуживание на клиенте</li>
+              </ul>
+            </div>
+            
+            <div class="info-card">
+              <div class="flex items-center mb-3">
+                <i class="fas fa-tools text-blue-400 mr-2"></i>
+                <h3 class="text-xl font-bold">Операционный лизинг</h3>
+              </div>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Краткосрочный (1-3 года)</li>
+                <li>Частичная амортизация</li>
+                <li>Возврат имущества лизингодателю</li>
+                <li>Имущество на балансе лизингодателя</li>
+                <li>Включает сервисное обслуживание</li>
+              </ul>
+            </div>
+            
+            <div class="info-card">
+              <div class="flex items-center mb-3">
+                <i class="fas fa-globe text-blue-400 mr-2"></i>
+                <h3 class="text-xl font-bold">Международный лизинг</h3>
+              </div>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Трансграничные операции</li>
+                <li>Доступ к зарубежному оборудованию</li>
+                <li>Мультивалютные платежи</li>
+                <li>Особое таможенное регулирование</li>
+                <li>Расширенные налоговые льготы</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="info-card mt-6">
+            <h3 class="text-xl font-bold mb-3 text-center">Новые формы лизинга в 2025 году</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="p-3 bg-opacity-20 bg-blue-900 rounded">
+                <div class="font-bold text-blue-300">ESG-лизинг</div>
+                <p class="text-sm">Льготные условия для экологичного оборудования и проектов с высоким ESG-рейтингом</p>
+              </div>
+              <div class="p-3 bg-opacity-20 bg-blue-900 rounded">
+                <div class="font-bold text-blue-300">Цифровой лизинг</div>
+                <p class="text-sm">Полностью цифровой процесс от заявки до завершения договора с использованием смарт-контрактов</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Слайд 4: Сравнение с кредитом -->
+      <section data-background="linear-gradient(135deg, #304352 0%, #0F2027 100%)">
+        <div class="custom-slide">
+          <h1>Лизинг vs Кредит: что выгоднее в 2025 году</h1>
+          
+          <div class="info-card">
+            <table class="comparison-table w-full">
+              <thead>
+                <tr>
+                  <th class="w-1/5">Параметр сравнения</th>
+                  <th class="w-2/5">Лизинг</th>
+                  <th class="w-2/5">Кредит</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Начальные затраты</td>
+                  <td class="highlight">Авансовый платеж от 10-20%</td>
+                  <td>Первоначальный взнос от 20-30%</td>
+                </tr>
+                <tr>
+                  <td>Налоговые преимущества</td>
+                  <td class="highlight">НДС к вычету со всей суммы, ускоренная амортизация</td>
+                  <td>НДС к вычету только с суммы оборудования</td>
+                </tr>
+                <tr>
+                  <td>Требования к заемщику</td>
+                  <td class="highlight">Менее жесткие требования, проще получить</td>
+                  <td>Строгая оценка финансового состояния</td>
+                </tr>
+                <tr>
+                  <td>Залоговое обеспечение</td>
+                  <td class="highlight">Не требуется дополнительный залог</td>
+                  <td>Часто требуется дополнительный залог</td>
+                </tr>
+                <tr>
+                  <td>Срок рассмотрения</td>
+                  <td class="highlight">1-3 дня в 2025 году</td>
+                  <td>5-14 дней</td>
+                </tr>
+                <tr>
+                  <td>Право собственности</td>
+                  <td>Переходит после выплаты всех платежей</td>
+                  <td class="highlight">Сразу оформляется на заемщика</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="mt-6 grid-container">
+            <div class="info-card">
+              <h3 class="text-xl font-bold mb-3">Экономический эффект</h3>
+              <img src="images/cost_comparison.svg" alt="Экономическое сравнение лизинга и кредита" class="w-full h-32 object-contain">
+              <p class="mt-3">В 2025 году экономия при лизинге составляет до 18% от общей стоимости актива по сравнению с кредитом, благодаря налоговым преимуществам и специальным программам поддержки</p>
+            </div>
+            
+            <div class="info-card">
+              <h3 class="text-xl font-bold mb-3">Кому подходит</h3>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="p-2 bg-opacity-20 bg-blue-900 rounded">
+                  <div class="font-bold text-blue-300">Лизинг:</div>
+                  <ul class="list-disc pl-5 text-sm">
+                    <li>Компаниям, оптимизирующим налоги</li>
+                    <li>При обновлении оборудования</li>
+                    <li>При ограниченных залогах</li>
+                  </ul>
+                </div>
+                <div class="p-2 bg-opacity-20 bg-blue-900 rounded">
+                  <div class="font-bold text-blue-300">Кредит:</div>
+                  <ul class="list-disc pl-5 text-sm">
+                    <li>Для недвижимости</li>
+                    <li>Для уникального оборудования</li>
+                    <li>При доступе к низким ставкам</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Слайд 5: Рынок лизинга 2025 -->
+      <section data-background="linear-gradient(135deg, #304352 0%, #0F2027 100%)">
+        <div class="custom-slide">
+          <h1>Рынок лизинга в России в 2025 году</h1>
+          
+          <div class="grid-container">
+            <div class="info-card">
+              <h3 class="text-xl font-bold mb-3">Ключевые показатели рынка</h3>
+              <img src="images/market_growth.svg" alt="Динамика российского рынка лизинга" class="w-full h-48 object-contain">
+              <div class="grid grid-cols-3 gap-2 mt-3">
+                <div class="text-center p-2">
+                  <div class="text-2xl font-bold text-blue-300">7,1 трлн ₽</div>
+                  <p class="text-sm">Объем нового бизнеса</p>
+                </div>
+                <div class="text-center p-2">
+                  <div class="text-2xl font-bold text-blue-300">18%</div>
+                  <p class="text-sm">Рост относительно 2024 года</p>
+                </div>
+                <div class="text-center p-2">
+                  <div class="text-2xl font-bold text-blue-300">15.4 трлн ₽</div>
+                  <p class="text-sm">Лизинговый портфель</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <h3 class="text-xl font-bold mb-3">Структура рынка по предметам лизинга</h3>
+              <img src="images/leasing_structure.svg" alt="Структура рынка лизинга по сегментам" class="w-full h-48 object-contain">
+              <div class="mt-3">
+                <div class="flex justify-between mb-1">
+                  <span>Транспорт</span>
+                  <span>43%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded">
+                  <div class="bg-blue-500 rounded h-2" style="width: 43%"></div>
+                </div>
+                
+                <div class="flex justify-between mb-1 mt-2">
+                  <span>Специализированная техника</span>
+                  <span>22%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded">
+                  <div class="bg-blue-500 rounded h-2" style="width: 22%"></div>
+                </div>
+                
+                <div class="flex justify-between mb-1 mt-2">
+                  <span>Недвижимость</span>
+                  <span>12%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded">
+                  <div class="bg-blue-500 rounded h-2" style="width: 12%"></div>
+                </div>
+                
+                <div class="flex justify-between mb-1 mt-2">
+                  <span>IT-оборудование</span>
+                  <span>15%</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded">
+                  <div class="bg-blue-500 rounded h-2" style="width: 15%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-card mt-6">
+            <h3 class="text-xl font-bold mb-3 text-center">Тенденции развития в 2025 году</h3>
+            <div class="flex justify-around">
+              <div class="text-center p-2">
+                <i class="fas fa-mobile-alt mb-2 text-blue-300"></i>
+                <p class="text-sm">Цифровизация процессов с использованием мобильных приложений</p>
+              </div>
+              <div class="text-center p-2">
+                <i class="fas fa-leaf mb-2 text-blue-300"></i>
+                <p class="text-sm">Рост ESG-лизинга (до 23% новых сделок)</p>
+              </div>
+              <div class="text-center p-2">
+                <i class="fas fa-microchip mb-2 text-blue-300"></i>
+                <p class="text-sm">Увеличение доли IT-оборудования до 18% к концу 2025г.</p>
+              </div>
+              <div class="text-center p-2">
+                <i class="fas fa-hands-helping mb-2 text-blue-300"></i>
+                <p class="text-sm">Расширение сервисных опций (обслуживание, страхование)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Слайд 6: Как выбрать лизинговую компанию -->
+      <section data-background="linear-gradient(135deg, #304352 0%, #0F2027 100%)">
+        <div class="custom-slide">
+          <h1>Как выбрать лизинговую компанию в 2025 году</h1>
+          
+          <div class="grid-container grid-cols-3">
+            <div class="info-card">
+              <div class="flex items-center mb-3">
+                <i class="fas fa-balance-scale text-blue-400 mr-2"></i>
+                <h3 class="text-lg font-bold">Надежность</h3>
+              </div>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Проверка рейтинга (АКРА, Эксперт РА)</li>
+                <li>История компании (от 5+ лет)</li>
+                <li>Объем портфеля (топ-20)</li>
+                <li>Проверка отзывов клиентов</li>
+                <li>Открытость финансовой отчетности</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <div class="flex items-center mb-3">
+                <i class="fas fa-percentage text-blue-400 mr-2"></i>
+                <h3 class="text-lg font-bold">Условия</h3>
+              </div>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Процентная ставка (реальная)</li>
+                <li>Авансовый платеж (10-49%)</li>
+                <li>Срок лизинга (1-7 лет)</li>
+                <li>Требования к документам</li>
+                <li>Скрытые комиссии и платежи</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <div class="flex items-center mb-3">
+                <i class="fas fa-cogs text-blue-400 mr-2"></i>
+                <h3 class="text-lg font-bold">Сервис</h3>
+              </div>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>Скорость рассмотрения заявки</li>
+                <li>Наличие онлайн-сервисов</li>
+                <li>Интеграция с бухгалтерией</li>
+                <li>Дополнительные услуги</li>
+                <li>Гибкость графика платежей</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="info-card mt-6">
+            <h3 class="text-xl font-bold mb-3 text-center">Топ-5 лизинговых компаний России в 2025 году</h3>
+            <table class="comparison-table w-full">
+              <thead>
+                <tr>
+                  <th>Компания</th>
+                  <th>Объем портфеля</th>
+                  <th>Специализация</th>
+                  <th>Средняя ставка</th>
+                  <th>Особенности</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>СберЛизинг</td>
+                  <td>2,8 трлн ₽</td>
+                  <td>Универсальная</td>
+                  <td>11,2%</td>
+                  <td>Интеграция с экосистемой Сбера</td>
+                </tr>
+                <tr>
+                  <td>ВТБ Лизинг</td>
+                  <td>2,3 трлн ₽</td>
+                  <td>Универсальная</td>
+                  <td>11,5%</td>
+                  <td>Сильные позиции в сегменте ж/д техники</td>
+                </tr>
+                <tr>
+                  <td>ГТЛК</td>
+                  <td>1,9 трлн ₽</td>
+                  <td>Транспорт</td>
+                  <td>9,8%</td>
+                  <td>Госпрограммы субсидирования</td>
+                </tr>
+                <tr>
+                  <td>Альфа-Лизинг</td>
+                  <td>1,4 трлн ₽</td>
+                  <td>Универсальная</td>
+                  <td>12,1%</td>
+                  <td>Лучшее мобильное приложение</td>
+                </tr>
+                <tr>
+                  <td>Газпромбанк Лизинг</td>
+                  <td>1,1 трлн ₽</td>
+                  <td>Пром. оборудование</td>
+                  <td>10,9%</td>
+                  <td>Специализация на энергетике</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Слайд 7: Заключение -->
+      <section data-background="linear-gradient(135deg, #304352 0%, #0F2027 100%)">
+        <div class="custom-slide">
+          <h1>Ключевые выводы о лизинге в 2025 году</h1>
+          
+          <div class="grid-container grid-cols-3">
+            <div class="info-card text-center p-4">
+              <i class="fas fa-chart-line text-blue-300 text-3xl mb-3"></i>
+              <div class="text-lg font-bold mb-2 text-blue-300">Рост рынка</div>
+              <div class="text-sm">
+                Стабильный рост рынка лизинга на 15-20% ежегодно, увеличение объема нового бизнеса до 7,1 трлн рублей
+              </div>
+            </div>
+            
+            <div class="info-card text-center p-4">
+              <i class="fas fa-digital-tachograph text-blue-300 text-3xl mb-3"></i>
+              <div class="text-lg font-bold mb-2 text-blue-300">Цифровизация</div>
+              <div class="text-sm">
+                Полностью цифровые процессы от заявки до закрытия сделки, интеграция с учетными системами клиентов
+              </div>
+            </div>
+            
+            <div class="info-card text-center p-4">
+              <i class="fas fa-leaf text-blue-300 text-3xl mb-3"></i>
+              <div class="text-lg font-bold mb-2 text-blue-300">ESG-трансформация</div>
+              <div class="text-sm">
+                Приоритет экологичным активам, специальные программы для проектов с высокими ESG-показателями
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-card mt-6 p-4">
+            <h3 class="text-xl font-bold mb-3">Кому стоит рассмотреть лизинг в 2025 году</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <ul class="list-disc pl-5 space-y-2">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                  <span>Растущие компании с ограниченными оборотными средствами</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                  <span>Бизнес с сезонными колебаниями выручки (индивидуальный график платежей)</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                  <span>Компании, оптимизирующие налоговую нагрузку (НДС, налог на прибыль)</span>
+                </li>
+              </ul>
+              <ul class="list-disc pl-5 space-y-2">
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                  <span>Предприятия, планирующие техническое перевооружение</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                  <span>Бизнес с высокой рентабельностью и недостатком залоговой базы</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                  <span>Стартапы с историей от 1 года и стабильными финансовыми показателями</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="mt-6 flex justify-center">
+            <div class="info-card max-w-2xl p-4 text-center">
+              <i class="fas fa-quote-right text-blue-300 text-2xl mb-3"></i>
+              <div class="text-xl italic mb-3">
+                "Лизинг - не просто способ приобретения активов, а стратегический инструмент управления капиталом в современном бизнесе"
+              </div>
+              <div class="text-sm text-gray-300">
+                — Ассоциация лизинговых компаний России, 2025
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Reveal.js скрипты -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/zoom/zoom.js"></script>
+
+  <script>
+    // Инициализация Reveal.js
+    Reveal.initialize({
+      hash: true,
+      // Параметры презентации
+      width: 1280,
+      height: 720,
+      margin: 0.05,
+      minScale: 0.2,
+      maxScale: 2.0,
+      
+      // Управление
+      controls: true,
+      progress: true,
+      center: true,
+      
+      // Показать номер слайда
+      slideNumber: true,
+      
+      // Transitions
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      
+      // Плагины
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ],
+      
+      // Настройка клавиш
+      keyboard: {
+        13: 'next', // Enter
+        27: function() { // Escape
+          // Действия при нажатии Esc
+        },
+        32: 'next', // Пробел
+        37: 'prev', // Стрелка влево
+        38: 'prev', // Стрелка вверх
+        39: 'next', // Стрелка вправо
+        40: 'next', // Стрелка вниз
+      },
+    });
+  </script>
+</body>
+</html>
