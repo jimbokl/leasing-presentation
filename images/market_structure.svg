@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <rect width="100%" height="100%" fill="none"/>
+  
+  <!-- Заголовок -->
+  <text x="300" y="30" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Структура рынка лизинга в России в 2025 году</text>
+  
+  <!-- Круговая диаграмма -->
+  <circle cx="300" cy="150" r="100" fill="none" stroke="white" stroke-width="1"/>
+  
+  <!-- Сегменты -->
+  <!-- Автолизинг 51% -->
+  <path d="M 300 150 L 300 50 A 100 100 0 0 1 386 204 z" fill="#64B5F6" opacity="0.8"/>
+  <text x="350" y="120" font-family="Arial" font-size="12" fill="white">Автолизинг</text>
+  <text x="350" y="135" font-family="Arial" font-size="12" fill="white">51%</text>
+  
+  <!-- Оборудование 20% -->
+  <path d="M 300 150 L 386 204 A 100 100 0 0 1 268 245 z" fill="#81C784" opacity="0.8"/>
+  <text x="330" y="220" font-family="Arial" font-size="12" fill="white">Оборудование</text>
+  <text x="330" y="235" font-family="Arial" font-size="12" fill="white">20%</text>
+  
+  <!-- Недвижимость 15% -->
+  <path d="M 300 150 L 268 245 A 100 100 0 0 1 214 196 z" fill="#FFB74D" opacity="0.8"/>
+  <text x="240" y="220" font-family="Arial" font-size="12" fill="white">Недвижимость</text>
+  <text x="240" y="235" font-family="Arial" font-size="12" fill="white">15%</text>
+  
+  <!-- Строительная техника 8% -->
+  <path d="M 300 150 L 214 196 A 100 100 0 0 1 214 104 z" fill="#BA68C8" opacity="0.8"/>
+  <text x="215" y="150" font-family="Arial" font-size="12" fill="white">Строительная</text>
+  <text x="215" y="165" font-family="Arial" font-size="12" fill="white">техника 8%</text>
+  
+  <!-- Прочее 6% -->
+  <path d="M 300 150 L 214 104 A 100 100 0 0 1 300 50 z" fill="#E57373" opacity="0.8"/>
+  <text x="250" y="100" font-family="Arial" font-size="12" fill="white">Прочее</text>
+  <text x="250" y="115" font-family="Arial" font-size="12" fill="white">6%</text>
+</svg>

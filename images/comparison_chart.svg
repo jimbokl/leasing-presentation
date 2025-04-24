@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <rect width="100%" height="100%" fill="none"/>
+  
+  <!-- Заголовок -->
+  <text x="300" y="30" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Сравнение лизинга и кредита</text>
+  
+  <!-- Легенда -->
+  <rect x="400" y="60" width="15" height="15" fill="#64B5F6" opacity="0.8"/>
+  <text x="420" y="73" font-family="Arial" font-size="10" fill="white">Лизинг</text>
+  
+  <rect x="400" y="85" width="15" height="15" fill="#FF8A80" opacity="0.8"/>
+  <text x="420" y="98" font-family="Arial" font-size="10" fill="white">Кредит</text>
+  
+  <!-- Столбцы сравнения -->
+  <text x="100" y="120" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Налоговые льготы</text>
+  <rect x="70" y="130" width="25" height="100" fill="#64B5F6" opacity="0.8"/>
+  <rect x="105" y="170" width="25" height="60" fill="#FF8A80" opacity="0.8"/>
+  
+  <text x="180" y="120" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Первоначальные затраты</text>
+  <rect x="150" y="190" width="25" height="40" fill="#64B5F6" opacity="0.8"/>
+  <rect x="185" y="140" width="25" height="90" fill="#FF8A80" opacity="0.8"/>
+  
+  <text x="260" y="120" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Скорость оформления</text>
+  <rect x="230" y="140" width="25" height="90" fill="#64B5F6" opacity="0.8"/>
+  <rect x="265" y="180" width="25" height="50" fill="#FF8A80" opacity="0.8"/>
+  
+  <text x="340" y="120" font-family="Arial" font-size="12" text-anchor="middle" fill="white">Риск устаревания</text>
+  <rect x="310" y="140" width="25" height="90" fill="#64B5F6" opacity="0.8"/>
+  <rect x="345" y="190" width="25" height="40" fill="#FF8A80" opacity="0.8"/>
+  
+  <!-- Линия-ось -->
+  <line x1="50" y1="230" x2="550" y2="230" stroke="white" stroke-width="1"/>
+  
+  <!-- Подпись оси -->
+  <text x="530" y="250" font-family="Arial" font-size="12" text-anchor="end" fill="white">Преимущество</text>
+</svg>
