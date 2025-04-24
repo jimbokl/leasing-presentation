@@ -221,8 +221,9 @@
     .kpi-card {
       padding: 15px;
       border-radius: 8px;
-      background-color: white;
-      border: 1px solid var(--light);
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      transition: background-color 0.3s;
     }
 
     .kpi-title {
@@ -358,12 +359,13 @@
 
     .accordion-header {
       padding: 15px;
-      background-color: white;
+      background-color: var(--card-bg);
       cursor: pointer;
       font-weight: bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: background-color 0.3s;
     }
 
     .accordion-header:hover {
@@ -375,7 +377,7 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
-      background-color: white;
+      background-color: var(--card-bg);
     }
 
     .accordion-content-inner {
@@ -426,6 +428,77 @@
 
     .tab-content.active {
       display: block;
+    }
+    
+    /* Objection mini-scripts */
+    .objection-content {
+      position: relative;
+    }
+    
+    .show-script-btn {
+      background-color: var(--blue);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    
+    .show-script-btn:hover {
+      background-color: #003d7a;
+    }
+    
+    .mini-script {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: var(--light);
+      border-radius: 8px;
+      position: relative;
+    }
+    
+    .mini-script.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .dialog-script {
+      margin: 15px 0;
+    }
+    
+    .script-line {
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 6px;
+      position: relative;
+    }
+    
+    .script-line.client {
+      background-color: var(--card-bg);
+      border-left: 3px solid var(--gray);
+      margin-right: 20px;
+    }
+    
+    .script-line.manager {
+      background-color: var(--card-bg);
+      border-left: 3px solid var(--blue);
+      margin-left: 20px;
+    }
+    
+    .script-note {
+      font-style: italic;
+      font-size: 0.9rem;
+      padding: 10px;
+      border-top: 1px dashed var(--border-color);
+      margin-top: 15px;
+      color: var(--gray);
     }
 
     /* TCO Calculator */
@@ -955,20 +1028,71 @@
       
       <div class="tab-content active" id="tab1">
         <h3>«Ставка космическая, подождём падения»</h3>
-        <p>При лизинге ставка — лишь верхушка айсберга. С учетом НДС-вычета и ускоренной амортизации фактическая стоимость владения на 7-12% ниже кредита.</p>
-        <p>Также доступна опция Re-pricing через 18 месяцев бесплатно — если ставка снизится, мы пересчитаем график.</p>
+        <div class="objection-content">
+          <div class="objection-arguments">
+            <p>При лизинге ставка — лишь верхушка айсберга. С учетом НДС-вычета и ускоренной амортизации фактическая стоимость владения на 7-12% ниже кредита.</p>
+            <p>Также доступна опция Re-pricing через 18 месяцев бесплатно — если ставка снизится, мы пересчитаем график.</p>
+            <button class="show-script-btn" data-script="script1">Показать мини-сценарий</button>
+          </div>
+          <div class="mini-script" id="script1">
+            <h4>Диалог о ставке</h4>
+            <div class="dialog-script">
+              <div class="script-line client">«Слушайте, у вас же ставка 14.9% — это очень дорого! У знакомых в банке одобрили под 12.5%. Давайте подождем, когда и у вас ставки упадут?»</div>
+              <div class="script-line manager">«Понимаю ваше беспокойство о ставке. Действительно, на первый взгляд разница есть. Но важно сравнивать не номинальные ставки, а реальную стоимость владения. Позвольте показать расчет TCO (Total Cost of Ownership)?»</div>
+              <div class="script-line client">«Хорошо, покажите»</div>
+              <div class="script-line manager">«Смотрите, благодаря лизинговой схеме вы получаете НДС-вычет в размере 20% и возможность применить ускоренную амортизацию. Фактически, ваша реальная ставка с учетом налоговых льгот будет на 2-3% ниже заявленной, а общая экономия составит около 7-12% по сравнению с кредитом. Плюс мы предлагаем бесплатную опцию Re-pricing через 18 месяцев — если ключевая ставка снизится, мы автоматически пересчитаем ваш график.»</div>
+              <div class="script-line client">«А можно конкретный расчет для моего случая?»</div>
+              <div class="script-line manager">«Конечно! Давайте сейчас вместе посчитаем на калькуляторе с вашими цифрами»</div>
+            </div>
+            <p class="script-note">Следующий шаг: перейдите к TCO-калькулятору (раздел ниже) и продемонстрируйте реальную экономию с учетом всех факторов.</p>
+          </div>
+        </div>
       </div>
       
       <div class="tab-content" id="tab2">
         <h3>«Большой ежемесячный платёж»</h3>
-        <p>Предложите увеличить аванс до 25% или структуру с Balloon 30% в конце срока — нагрузка на cash-flow снижается на 18%.</p>
-        <p>Также доступен сезонный график оплаты: летом платежи меньше, когда выручка традиционно ниже.</p>
+        <div class="objection-content">
+          <div class="objection-arguments">
+            <p>Предложите увеличить аванс до 25% или структуру с Balloon 30% в конце срока — нагрузка на cash-flow снижается на 18%.</p>
+            <p>Также доступен сезонный график оплаты: летом платежи меньше, когда выручка традиционно ниже.</p>
+            <button class="show-script-btn" data-script="script2">Показать мини-сценарий</button>
+          </div>
+          <div class="mini-script" id="script2">
+            <h4>Диалог о платежах</h4>
+            <div class="dialog-script">
+              <div class="script-line client">«Ежемесячный платеж получается слишком высоким для нас. Мы не готовы так нагружать денежный поток.»</div>
+              <div class="script-line manager">«Я вас полностью понимаю. У нас есть несколько вариантов решения этой проблемы. Первое — мы можем настроить структуру платежей под ваш бизнес. Например, какой сезон у вас наиболее доходный?»</div>
+              <div class="script-line client">«Самый прибыльный для нас — осень и зима.»</div>
+              <div class="script-line manager">«Отлично! Тогда могу предложить вам сезонный график: летом, когда у вас меньше выручки, мы снижаем платежи на 30-40%, а зимой, в высокий сезон, немного увеличиваем. Таким образом, платежи будут соответствовать вашему денежному потоку.»</div>
+              <div class="script-line client">«А какие еще есть варианты?»</div>
+              <div class="script-line manager">«Второй вариант — структура с Balloon-платежом: мы снижаем ежемесячные платежи на 15-20%, а в конце срока у вас будет один крупный платеж (около 30% от стоимости). Он фактически становится "выкупной стоимостью", и вы можете либо внести его и оставить ТС себе, либо вернуть технику нам и обновить парк.»</div>
+            </div>
+            <p class="script-note">Следующий шаг: предложите визуализировать оба варианта графика платежей и сравнить их со стандартным.</p>
+          </div>
+        </div>
       </div>
       
       <div class="tab-content" id="tab3">
         <h3>«Нужна гибкость владения»</h3>
-        <p>С помощью механизма buy-back через 36 месяцев вы можете обновить парк без необходимости самостоятельной перепродажи и связанных с этим потерь.</p>
-        <p>Также портал "Флит+" предоставляет полную информацию о пробеге, сервисе, напоминает о необходимом ТО — экономия времени и снижение риска штрафов.</p>
+        <div class="objection-content">
+          <div class="objection-arguments">
+            <p>С помощью механизма buy-back через 36 месяцев вы можете обновить парк без необходимости самостоятельной перепродажи и связанных с этим потерь.</p>
+            <p>Также портал "Флит+" предоставляет полную информацию о пробеге, сервисе, напоминает о необходимом ТО — экономия времени и снижение риска штрафов.</p>
+            <button class="show-script-btn" data-script="script3">Показать мини-сценарий</button>
+          </div>
+          <div class="mini-script" id="script3">
+            <h4>Диалог о гибкости</h4>
+            <div class="dialog-script">
+              <div class="script-line client">«Нам важна гибкость. Что если через год-два наши потребности изменятся или появятся новые модели техники?»</div>
+              <div class="script-line manager">«Это очень разумный вопрос. Лизинг как раз и создан для обеспечения гибкости бизнеса. Во-первых, у нас есть программа buy-back с гарантированной выкупной стоимостью: через 36 месяцев вы можете вернуть технику и взять новую, не занимаясь самостоятельной перепродажей.»</div>
+              <div class="script-line client">«А если захотим обновить технику раньше?»</div>
+              <div class="script-line manager">«В этом случае у вас будет опция досрочного закрытия контракта без штрафов с 13-го месяца. Кроме того, мы предлагаем "Флит+" — это комплексная платформа для управления автопарком, которая позволяет отслеживать пробег, расход топлива, своевременное ТО. Таким образом, вы получаете не просто финансирование, а полноценный сервис управления автопарком с возможностью гибкого обновления.»</div>
+              <div class="script-line client">«А как выглядит этот процесс обновления?»</div>
+              <div class="script-line manager">«Очень просто: за 2-3 месяца до планируемого обновления вы сообщаете нам о своем решении, мы готовим новый контракт на актуальные модели. В день замены вы просто сдаете старую технику и получаете новую, без простоев в работе.»</div>
+            </div>
+            <p class="script-note">Следующий шаг: продемонстрируйте интерфейс портала "Флит+" и расскажите о возможностях масштабирования автопарка.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1235,6 +1359,35 @@
           }
         });
       }
+      
+      // Initialize objection scripts functionality
+      const scriptButtons = document.querySelectorAll('.show-script-btn');
+      const scripts = document.querySelectorAll('.mini-script');
+      
+      scriptButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const scriptId = button.dataset.script;
+          const targetScript = document.getElementById(scriptId);
+          
+          // Toggle script visibility
+          if (targetScript.classList.contains('active')) {
+            targetScript.classList.remove('active');
+            button.textContent = 'Показать мини-сценарий';
+          } else {
+            // Hide all scripts first
+            scripts.forEach(script => script.classList.remove('active'));
+            
+            // Reset all button texts
+            scriptButtons.forEach(btn => {
+              btn.textContent = 'Показать мини-сценарий';
+            });
+            
+            // Show the target script
+            targetScript.classList.add('active');
+            button.textContent = 'Скрыть мини-сценарий';
+          }
+        });
+      });
     }
     
     // Feature cards click events
