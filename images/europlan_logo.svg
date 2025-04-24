@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { fill: #2B5BA3; font-family: 'Arial', sans-serif; font-weight: bold; }
+    .accent { fill: #40A6DD; }
+  </style>
+  <rect width="400" height="100" fill="#ffffff" />
+  <text x="50" y="65" class="text" font-size="40">ЕВРОПЛАН</text>
+  <circle cx="30" cy="50" r="15" class="accent" />
+</svg>

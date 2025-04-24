@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 18px sans-serif; fill: white; }
+    .axis { font: 12px sans-serif; fill: white; }
+    .bar-portfolio { fill: #2B5BA3; }
+    .bar-business { fill: #40A6DD; }
+    .bar-profit { fill: #64B5F6; }
+    .legend-text { font: 12px sans-serif; fill: white; }
+  </style>
+  
+  <rect width="600" height="400" fill="#1c2937" />
+  
+  <!-- Заголовок -->
+  <text x="300" y="30" text-anchor="middle" class="title">Финансовые показатели "Европлан" 2022-2024</text>
+  
+  <!-- Оси -->
+  <line x1="80" y1="350" x2="550" y2="350" stroke="white" stroke-width="2" />
+  <line x1="80" y1="350" x2="80" y2="50" stroke="white" stroke-width="2" />
+  
+  <!-- Подписи оси X -->
+  <text x="170" y="375" text-anchor="middle" class="axis">2022</text>
+  <text x="320" y="375" text-anchor="middle" class="axis">2023</text>
+  <text x="470" y="375" text-anchor="middle" class="axis">2024</text>
+  
+  <!-- Данные - Лизинговый портфель -->
+  <rect x="120" y="220" width="100" height="130" class="bar-portfolio" />
+  <rect x="270" y="140" width="100" height="210" class="bar-portfolio" />
+  <rect x="420" y="110" width="100" height="240" class="bar-portfolio" />
+  
+  <!-- Данные - Объем нового бизнеса -->
+  <rect x="130" y="230" width="80" height="120" class="bar-business" />
+  <rect x="280" y="135" width="80" height="215" class="bar-business" />
+  <rect x="430" y="135" width="80" height="215" class="bar-business" />
+  
+  <!-- Данные - Чистая прибыль -->
+  <rect x="140" y="320" width="60" height="30" class="bar-profit" />
+  <rect x="290" y="310" width="60" height="40" class="bar-profit" />
+  <rect x="440" y="310" width="60" height="40" class="bar-profit" />
+  
+  <!-- Подписи данных -->
+  <text x="170" y="215" text-anchor="middle" class="axis">164.2</text>
+  <text x="320" y="135" text-anchor="middle" class="axis">230</text>
+  <text x="470" y="105" text-anchor="middle" class="axis">256</text>
+  
+  <text x="170" y="225" text-anchor="middle" class="axis">161</text>
+  <text x="320" y="130" text-anchor="middle" class="axis">239</text>
+  <text x="470" y="130" text-anchor="middle" class="axis">238.3</text>
+  
+  <text x="170" y="315" text-anchor="middle" class="axis">11.8</text>
+  <text x="320" y="305" text-anchor="middle" class="axis">14.8</text>
+  <text x="470" y="305" text-anchor="middle" class="axis">14.9</text>
+  
+  <!-- Легенда -->
+  <rect x="100" y="40" width="15" height="15" class="bar-portfolio" />
+  <text x="120" y="53" class="legend-text">Лизинговый портфель (млрд руб.)</text>
+  
+  <rect x="280" y="40" width="15" height="15" class="bar-business" />
+  <text x="300" y="53" class="legend-text">Объем нового бизнеса (млрд руб.)</text>
+  
+  <rect x="460" y="40" width="15" height="15" class="bar-profit" />
+  <text x="480" y="53" class="legend-text">Чистая прибыль (млрд руб.)</text>
+</svg>
