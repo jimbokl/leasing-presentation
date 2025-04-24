@@ -287,6 +287,90 @@
       display: block;
     }
 
+    /* TCO Calculator */
+    .calculator {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .calculator-inputs {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .calculator-results {
+      flex: 1;
+      min-width: 250px;
+      background-color: var(--light);
+      padding: 15px;
+      border-radius: 8px;
+    }
+    
+    .calculator-group {
+      margin-bottom: 15px;
+    }
+    
+    .calculator-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: var(--blue);
+    }
+    
+    .calculator-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--light);
+      border-radius: 4px;
+    }
+    
+    .calculate-btn {
+      background-color: var(--blue);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+      width: 100%;
+    }
+    
+    .calculate-btn:hover {
+      background-color: #003d7a;
+    }
+    
+    .result-item {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .result-item:last-child {
+      border-bottom: none;
+      font-weight: bold;
+      color: var(--blue);
+      padding-top: 15px;
+    }
+    
+    .result-label {
+      font-weight: 500;
+    }
+    
+    .result-value {
+      font-weight: bold;
+    }
+    
+    .highlight {
+      background-color: rgba(255, 150, 0, 0.1);
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
     /* Quick Links */
     .quick-links {
       display: grid;
@@ -383,7 +467,7 @@
     <div class="container">
       <div class="header-content">
         <div class="logo-title">
-          <img class="logo" src="/Users/dmitrijmotorin/leasing-presentation/logo.svg.png" alt="Европлан логотип">
+          <img class="logo" src="logo.svg.png" alt="Европлан логотип">
           <h1>Памятка менеджера — v1.0</h1>
         </div>
         <div class="datetime" id="current-datetime">—</div>
@@ -673,11 +757,63 @@
       </div>
     </section>
 
+    <!-- TCO Calculator -->
+    <section id="calculator">
+      <h2>TCO-калькулятор</h2>
+      <div class="calculator">
+        <div class="calculator-inputs">
+          <div class="calculator-group">
+            <label for="vehicle-cost">Стоимость ТС, ₽:</label>
+            <input type="number" id="vehicle-cost" value="1500000" min="0" step="50000">
+          </div>
+          <div class="calculator-group">
+            <label for="lease-term">Срок лизинга, мес:</label>
+            <input type="number" id="lease-term" value="36" min="12" max="60" step="12">
+          </div>
+          <div class="calculator-group">
+            <label for="advance-payment">Аванс, %:</label>
+            <input type="number" id="advance-payment" value="20" min="0" max="49" step="5">
+          </div>
+          <div class="calculator-group">
+            <label for="lease-rate">Ставка лизинга, %:</label>
+            <input type="number" id="lease-rate" value="14.9" min="0" max="30" step="0.1">
+          </div>
+          <div class="calculator-group">
+            <label for="loan-rate">Ставка кредита, %:</label>
+            <input type="number" id="loan-rate" value="16.5" min="0" max="30" step="0.1">
+          </div>
+          <button id="calculate-tco" class="calculate-btn">Рассчитать</button>
+        </div>
+        <div class="calculator-results">
+          <div class="result-item">
+            <div class="result-label">Ежемесячный платёж (лизинг):</div>
+            <div class="result-value" id="lease-payment">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Ежемесячный платёж (кредит):</div>
+            <div class="result-value" id="loan-payment">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">TCO лизинг:</div>
+            <div class="result-value" id="lease-tco">—</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">TCO кредит:</div>
+            <div class="result-value" id="loan-tco">—</div>
+          </div>
+          <div class="result-item highlight">
+            <div class="result-label">Экономия с лизингом:</div>
+            <div class="result-value" id="savings">—</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Quick Links -->
     <section id="links">
       <h2>Быстрые ссылки</h2>
       <div class="quick-links">
-        <a href="#" target="_blank" class="quick-link">
+        <a href="#calculator" class="quick-link">
           <span class="link-icon">📊</span>
           TCO-калькулятор
         </a>
@@ -709,7 +845,7 @@
         </div>
       </div>
       <div class="generation-info">
-        Сгенерировано: 24 апреля 2025 г.
+        Сгенерировано: <span id="generation-date">24 апреля 2025 г.</span>
       </div>
     </footer>
   </div>
@@ -727,6 +863,10 @@
         minute: '2-digit'
       };
       document.getElementById('current-datetime').textContent = now.toLocaleString('ru-RU', options);
+      
+      // Update generation date in footer
+      const dateOptions = { day: 'numeric', month: 'long', year: 'numeric' };
+      document.getElementById('generation-date').textContent = now.toLocaleString('ru-RU', dateOptions);
     }
     
     updateDateTime();
